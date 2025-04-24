@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<LangVersion>10.0</LangVersion>
+		<AssemblyName>FastFish</AssemblyName>
+		<ProductName>FastFish</ProductName>
+		<Version>1.0.0</Version>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<RootNamespace>FastFish</RootNamespace>
+		<Nullable>enable</Nullable>
+		<RestoreAdditionalProjectSources>
+			https://api.nuget.org/v3/index.json;
+			https://nuget.bepinex.dev/v3/index.json;
+			https://nuget.samboy.dev/v3/index.json
+		</RestoreAdditionalProjectSources>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="HarmonyX" Version="2.14.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="Assembly-CSharp-firstpass">
+		  <HintPath>assemblies\Assembly-CSharp-firstpass.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Assembly-CSharp">
+		  <HintPath>..\..\FateReawakened_Data\Managed\Assembly-CSharp-publicized.dll</HintPath>
+		</Reference>
+		<Reference Include="BepInEx">
+		  <HintPath>..\..\BepInEx\core\BepInEx.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine">
+		  <HintPath>..\..\FateReawakened_Data\Managed\UnityEngine.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>..\..\FateReawakened_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.InputLegacyModule">
+		  <HintPath>..\..\FateReawakened_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+	
+
+	
+	
+</Project>
